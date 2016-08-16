@@ -9,7 +9,6 @@
 import UIKit
 
 private let reuseIdentifier = "testCell"
-private var setRed: Bool = false
 
 class PhotosCollectionViewController: UICollectionViewController {
 
@@ -19,9 +18,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
     }
 
@@ -30,15 +26,19 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+		if segue.identifier == "ShowDetail" {
+			let detailVC = segue.destinationViewController as! PhotoDetailViewController
+			if let selectedCell = sender as? PhotoCollectionViewCell {
+				let indexPath = collectionView!.indexPathForCell(selectedCell)
+				detailVC.text = String(indexPath!.row + 1)
+			}
+		}
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -48,13 +48,12 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 45
+        return 12
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-		cell.backgroundColor = setRed ? UIColor.redColor() : UIColor.blueColor()
-		setRed = !setRed
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCollectionViewCell
+		cell.cellLabel.text = String(indexPath.row + 1)
     
         return cell
     }
