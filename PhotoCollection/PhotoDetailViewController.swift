@@ -9,15 +9,19 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
-
-	@IBOutlet weak var testLabel: UILabel!
 	
-	var text: String!
+	// MARK: properties
+	@IBOutlet weak var photoImageView: UIImageView!
+	
+	var photo: Photo?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		testLabel.text = text
+		if let photo = photo {
+			navigationItem.title = "Photo"
+			photoImageView.image = photo.photo
+		}
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,13 +12,16 @@ private let reuseIdentifier = "testCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+	// MARK: properties
+	var photos = [Photo]()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Do any additional setup after loading the view.
+        loadImage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +29,23 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
+	func loadImage() {
+		let photo1 = Photo(photo: UIImage(named: "photo1")!)
+		let photo2 = Photo(photo: UIImage(named: "photo2")!)
+		let photo3 = Photo(photo: UIImage(named: "photo3")!)
+		let photo4 = Photo(photo: UIImage(named: "photo4")!)
+		let photo5 = Photo(photo: UIImage(named: "photo5")!)
+		let photo6 = Photo(photo: UIImage(named: "photo6")!)
+		let photo7 = Photo(photo: UIImage(named: "photo7")!)
+		let photo8 = Photo(photo: UIImage(named: "photo8")!)
+		let photo9 = Photo(photo: UIImage(named: "photo9")!)
+		let photo10 = Photo(photo: UIImage(named: "photo10")!)
+		let photo11 = Photo(photo: UIImage(named: "photo11")!)
+		let photo12 = Photo(photo: UIImage(named: "photo12")!)
+		
+		photos += [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10, photo11, photo12]
+		
+	}
 
     // MARK: - Navigation
 
@@ -34,8 +54,9 @@ class PhotosCollectionViewController: UICollectionViewController {
 		if segue.identifier == "ShowDetail" {
 			let detailVC = segue.destinationViewController as! PhotoDetailViewController
 			if let selectedCell = sender as? PhotoCollectionViewCell {
-				let indexPath = collectionView!.indexPathForCell(selectedCell)
-				detailVC.text = String(indexPath!.row + 1)
+				let indexPath = collectionView!.indexPathForCell(selectedCell)!
+				let selectedPhoto = photos[indexPath.row]
+				detailVC.photo = selectedPhoto
 			}
 		}
     }
@@ -48,13 +69,15 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return photos.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCollectionViewCell
-		cell.cellLabel.text = String(indexPath.row + 1)
-    
+		let photo = photos[indexPath.row]
+		
+		cell.cellImage.image = photo.photo
+		
         return cell
     }
 	

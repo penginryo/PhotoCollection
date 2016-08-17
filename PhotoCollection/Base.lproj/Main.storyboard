@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Collection-->
@@ -27,23 +29,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="245" height="245"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTx-xv-qxt">
-                                            <rect key="frame" x="102" y="112" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U8Z-F9-SKz">
+                                            <rect key="frame" x="0.0" y="0.0" width="245" height="245"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="0.55734657440000002" green="0.91655246130000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="PTx-xv-qxt" firstAttribute="centerX" secondItem="mxV-fZ-wwL" secondAttribute="centerX" id="kaL-pw-i6A"/>
-                                    <constraint firstItem="PTx-xv-qxt" firstAttribute="centerY" secondItem="mxV-fZ-wwL" secondAttribute="centerY" id="zhl-gQ-OjW"/>
+                                    <constraint firstItem="U8Z-F9-SKz" firstAttribute="top" secondItem="mxV-fZ-wwL" secondAttribute="topMargin" constant="-8" id="3yB-lP-bKD"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="U8Z-F9-SKz" secondAttribute="trailing" constant="-8" id="hNc-AO-cwU"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="U8Z-F9-SKz" secondAttribute="bottom" constant="-8" id="n2E-0Z-hvc"/>
+                                    <constraint firstItem="U8Z-F9-SKz" firstAttribute="leading" secondItem="mxV-fZ-wwL" secondAttribute="leadingMargin" constant="-8" id="voj-F4-PMZ"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="cellLabel" destination="PTx-xv-qxt" id="RcB-cW-aOK"/>
+                                    <outlet property="cellImage" destination="U8Z-F9-SKz" id="rR1-vT-KQR"/>
                                     <segue destination="IvI-IS-EGf" kind="show" identifier="ShowDetail" id="RMO-MN-CYt"/>
                                 </connections>
                             </collectionViewCell>
@@ -71,24 +71,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L8m-kw-pLc">
-                                <rect key="frame" x="190" y="72" width="220" height="220"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L8m-kw-pLc">
+                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L8m-kw-pLc" secondAttribute="height" multiplier="1:1" id="3n9-0M-nVg"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1y-MM-vvV">
-                                <rect key="frame" x="279" y="290" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="v1y-MM-vvV" firstAttribute="centerY" secondItem="fZt-oh-CBN" secondAttribute="centerY" id="TFF-x5-Fhr"/>
-                            <constraint firstItem="v1y-MM-vvV" firstAttribute="centerX" secondItem="fZt-oh-CBN" secondAttribute="centerX" id="q7q-pc-Wdl"/>
+                            <constraint firstItem="L8m-kw-pLc" firstAttribute="top" secondItem="hhx-WW-oE6" secondAttribute="bottom" id="1Vq-qF-Hv4"/>
+                            <constraint firstItem="L8m-kw-pLc" firstAttribute="leading" secondItem="fZt-oh-CBN" secondAttribute="leading" id="eeK-r4-KgA"/>
+                            <constraint firstAttribute="trailing" secondItem="L8m-kw-pLc" secondAttribute="trailing" id="qoe-nF-BjC"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="v1y-MM-vvV" id="NkE-k4-ekC"/>
+                        <outlet property="photoImageView" destination="L8m-kw-pLc" id="m17-fE-GqK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5A-wX-VyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

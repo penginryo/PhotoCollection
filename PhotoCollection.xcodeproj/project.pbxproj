@@ -14,6 +14,7 @@
 		A8BEDD681D5C3B27003E17C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BEDD661D5C3B27003E17C8 /* Main.storyboard */; };
 		A8BEDD6A1D5C3B27003E17C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8BEDD691D5C3B27003E17C8 /* Assets.xcassets */; };
 		A8BEDD6D1D5C3B27003E17C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BEDD6B1D5C3B27003E17C8 /* LaunchScreen.storyboard */; };
+		A8CDC8741D64157B00DACE89 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CDC8731D64157B00DACE89 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A8BEDD691D5C3B27003E17C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8BEDD6C1D5C3B27003E17C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8BEDD6E1D5C3B27003E17C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8CDC8731D64157B00DACE89 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				A8BEDD661D5C3B27003E17C8 /* Main.storyboard */,
 				A88BE2901D62C58700426A70 /* PhotoDetailViewController.swift */,
 				A88F976F1D5D7B19003DAC44 /* PhotosCollectionViewController.swift */,
+				A8CDC8731D64157B00DACE89 /* Photo.swift */,
 				A88BE28E1D62BDEC00426A70 /* PhotoCollectionViewCell.swift */,
 				A8BEDD691D5C3B27003E17C8 /* Assets.xcassets */,
 				A8BEDD6B1D5C3B27003E17C8 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				A8BEDD631D5C3B27003E17C8 /* AppDelegate.swift in Sources */,
 				A88BE2911D62C58700426A70 /* PhotoDetailViewController.swift in Sources */,
 				A88BE28F1D62BDEC00426A70 /* PhotoCollectionViewCell.swift in Sources */,
+				A8CDC8741D64157B00DACE89 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
