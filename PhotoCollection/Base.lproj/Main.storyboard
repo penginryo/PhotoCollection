@@ -54,6 +54,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Collection" id="Mr7-P7-gj5"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOr-vo-s53" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,6 +102,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="chk-0s-mfe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.19726389781717568" green="0.53260422326696988" blue="0.91310127617801051" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
